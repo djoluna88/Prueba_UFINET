@@ -1,0 +1,57 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/16/2022 11:22:51 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CT-DLUNA-MDG"
+  DTS:CreatorName="TELETICA\dluna-mdg"
+  DTS:DTSID="{696F0EC8-7DF0-4826-97F9-C3B174E13A35}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.845.0"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="DimConductor"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{10F912E5-0161-4FFF-B34A-DC43306538AE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Merge Dim Conductor"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FD12E40C-29E6-465A-AFD4-0EC80C5A61C9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Merge Dim Conductor"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{216E9783-8244-4FD4-A5D7-3B1396747544}"
+          SQLTask:SqlStatementSource="MERGE [DWH_UFINET].[TRANSVENTA].[DimConductor] AS TARGET &#xA; USING (&#xA;         SELECT [CodC]&#xA;&#x9;&#x9;,[Nombre]&#xA;&#x9;&#x9;,[Categoria]&#xA;&#x9;&#x9;FROM   [PORTES].[Conductor]&#xA;&#xA;       ) SOURCE&#xA;    ON TARGET.CodC    = SOURCE.CodC&#xA;&#x9;&#xA;  WHEN NOT MATCHED THEN&#xA;     INSERT (CodC,Nombre,Categoria)&#xA;     VALUES (SOURCE.CodC,SOURCE.Nombre,SOURCE.Categoria);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="182.666666666667,42.6666666666667"
+          Id="Package\Merge Dim Conductor"
+          TopLeft="229.374996582046,126.099997745156" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

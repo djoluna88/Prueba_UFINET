@@ -1,0 +1,165 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="665ffa85-7d1e-4b8f-adcf-ffe28099ffd8" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DWH UFINET</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Dim Cliente</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="d79c4054-b3fb-436a-91b3-f38424a78b5a">
+          <ID>Dim Cliente</ID>
+          <Name>Dim Cliente</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="5369f701-c9eb-4b87-b382-982f1aac06e9">
+            <DataSourceViewID>DWH UFINET</DataSourceViewID>
+            <TableID>TRANSVENTA_DimCliente</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Dim Conductor</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="f5582588-d4af-47e3-8b97-8a86b2369ce4">
+          <ID>Dim Conductor</ID>
+          <Name>Dim Conductor</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="da2ed0f2-e84c-4b4f-8cad-2bbbc357bb2f">
+            <DataSourceViewID>DWH UFINET</DataSourceViewID>
+            <TableID>TRANSVENTA_DimConductor</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Dim Producto</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="447d6b66-d14b-45bb-a65f-260a7d3b5285">
+          <ID>Dim Producto</ID>
+          <Name>Dim Producto</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="9fee13eb-a896-43de-8dfc-e11f3f2ca9a1">
+            <DataSourceViewID>DWH UFINET</DataSourceViewID>
+            <TableID>TRANSVENTA_DimProducto</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Dim Pais</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="d4062030-cea6-4216-be8b-ad38e1029c20">
+          <ID>Dim Pais</ID>
+          <Name>Dim Pais</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="f79d9db5-5b36-48fc-bc24-92ed8213d479">
+            <DataSourceViewID>DWH UFINET</DataSourceViewID>
+            <TableID>TRANSVENTA_DimPais</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Dim Maquinaria</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="01e407ab-ea1d-42fa-ab8b-28e9b06b4047">
+          <ID>Dim Maquinaria</ID>
+          <Name>Dim Maquinaria</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="827b96e2-1d73-4ef5-86fa-fc241113e0ac">
+            <DataSourceViewID>DWH UFINET</DataSourceViewID>
+            <TableID>TRANSVENTA_DimMaquinaria</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Dim Tiempo</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="6a41f08a-3ff3-48d9-973c-ed8a098c0a41">
+          <ID>Dim Tiempo</ID>
+          <Name>Dim Tiempo</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="97d26a1d-43d9-4fe0-a21d-cdb483fda9fa">
+            <DataSourceViewID>DWH UFINET</DataSourceViewID>
+            <TableID>TRANSVENTA_DimTiempo</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Dim Proyecto</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="4781b53f-a896-4fdf-a3f9-a8924391a7fc">
+          <ID>Dim Proyecto</ID>
+          <Name>Dim Proyecto</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="dd7558cb-68da-44f3-a1cb-b99edd227b20">
+            <DataSourceViewID>DWH UFINET</DataSourceViewID>
+            <TableID>TRANSVENTA_DimProyecto</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Hechos</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="7866e5ca-f225-4007-8b70-b539b71e47d9">
+          <ID>Hechos</ID>
+          <Name>Hechos</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="0f5158f9-75a3-4e22-9d71-1e4ecce1e652">
+            <DataSourceViewID>DWH UFINET</DataSourceViewID>
+            <TableID>TRANSVENTA_Hechos</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

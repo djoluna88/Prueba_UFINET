@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="localhost.DWH_UFINET"
+  DTS:DTSID="{C014B658-57BE-450B-934A-0C1003B941D1}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=localhost;Initial Catalog=DWH_UFINET;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SSIS ETL DTM Transporte-{C014B658-57BE-450B-934A-0C1003B941D1}localhost.DWH_UFINET;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

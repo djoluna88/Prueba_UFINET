@@ -1,0 +1,226 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5f5bf8f7-17c5-4799-806f-eb718e98ee5d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Hechos</ID>
+  <Name>Hechos</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="1353bad2-131d-4765-84fb-3d7a8565f400">
+    <DataSourceViewID>DWH UFINET</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="75b5292a-98e2-4495-9e2e-b2987ca4b1a2">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="c86459f8-31a4-4b34-869b-34d1780b5660">
+      <ID>Id Hecho</ID>
+      <Name>Id Hecho</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c2f2a90d-4bf1-416f-a2e0-6dd37f84b573">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="744de350-0a55-438c-8fb9-6c23024b3d46">
+            <TableID>TRANSVENTA_Hechos</TableID>
+            <ColumnID>idHecho</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="a299719f-39b2-494a-9423-b440e68c7167">
+          <AttributeID>Cod P</AttributeID>
+          <Name>Cod P</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="968e9e78-e330-4fcc-a63b-6b1abf1b2b0d">
+          <AttributeID>Cod C</AttributeID>
+          <Name>Cod C</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="23e6c8d1-2629-47da-adda-64fc43daaf77">
+          <AttributeID>Cod PR</AttributeID>
+          <Name>Cod PR</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="133b944b-f819-4847-a5d2-b2150c4460fa">
+          <AttributeID>Cod Pais</AttributeID>
+          <Name>Cod Pais</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="62630f4a-4d49-47d8-81f4-aa40e23749f8">
+          <AttributeID>Cod M</AttributeID>
+          <Name>Cod M</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="881be4ea-83c2-48e6-a19b-ce4b75a448c6">
+          <AttributeID>Cod Cliente</AttributeID>
+          <Name>Cod Cliente</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8a5cfd80-ffaa-4e56-973f-dafc126b85fd">
+          <AttributeID>Fecha Inicio</AttributeID>
+          <Name>Fecha Inicio</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7e86e7ce-e83d-41fc-8663-76079e017007">
+      <ID>Cod P</ID>
+      <Name>Cod P</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7a0eaaed-539c-45c1-ab67-8ae234e8a350">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9ee984fd-58ad-4338-bebc-fda5b7eb7b41">
+            <TableID>TRANSVENTA_DimProyecto</TableID>
+            <ColumnID>CodP</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5061db54-6c90-4e01-96ee-0a8be6085c4c">
+      <ID>Cod C</ID>
+      <Name>Cod C</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="19c64426-0bcf-45d7-bc7c-bf220290bce8">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9946e548-781c-4c52-a739-ebafbe01fca6">
+            <TableID>TRANSVENTA_DimConductor</TableID>
+            <ColumnID>CodC</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9cbadd32-9660-4293-b03e-20f1b73862b6">
+      <ID>Cod PR</ID>
+      <Name>Cod PR</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2f169eab-90a8-4194-ae24-1fc9e320c0dd">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="18f469e4-580d-4090-93cb-653dc7039971">
+            <TableID>TRANSVENTA_DimProducto</TableID>
+            <ColumnID>CodPR</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="89989199-9687-4c4f-9a19-d869f7ea51dd">
+      <ID>Cod Pais</ID>
+      <Name>Cod Pais</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="db9eae5a-4ee7-4931-a3cb-e2fc5c59a499">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="255adc4a-1bbf-4370-8ad3-1051121b2619">
+            <TableID>TRANSVENTA_DimPais</TableID>
+            <ColumnID>CodPais</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bf5d275a-ed90-44fa-ae61-9af72109a0b1">
+      <ID>Cod M</ID>
+      <Name>Cod M</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b5e152e3-acd9-4bc6-ae9d-59eeb39037a1">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="61d6f163-df7a-48d8-980f-95b2001565fd">
+            <TableID>TRANSVENTA_DimMaquinaria</TableID>
+            <ColumnID>CodM</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1c2b7fd9-1e13-4741-b3a3-182273c4f2e0">
+      <ID>Cod Cliente</ID>
+      <Name>Cod Cliente</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="28ad257f-b731-4600-b26b-5ee496a3c605">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3b33be69-ba55-4940-8076-8a1eb4af04f9">
+            <TableID>TRANSVENTA_DimCliente</TableID>
+            <ColumnID>CodCliente</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4e9e7641-9cf0-4ba3-80bb-49e3dfab92d9">
+      <ID>Fecha Inicio</ID>
+      <Name>Fecha Inicio</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="38ca9fec-01ec-4d8f-b60e-522d4b7d21ff">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="dd996c14-cfe0-4c72-903d-a09d59def889">
+            <TableID>TRANSVENTA_DimTiempo</TableID>
+            <ColumnID>FechaInicio</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

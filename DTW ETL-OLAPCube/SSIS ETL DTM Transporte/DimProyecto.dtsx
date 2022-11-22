@@ -1,0 +1,57 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/17/2022 12:13:31 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CT-DLUNA-MDG"
+  DTS:CreatorName="TELETICA\dluna-mdg"
+  DTS:DTSID="{E53A4BF3-38C5-4D44-B030-E4C0F1A12BF4}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.845.0"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="DimProyecto"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{811E682D-C391-4561-8866-6B1AF7D2AF77}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Merge Dim Proyecto"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6DBEAE61-87EE-4296-AF14-AA18E632C66B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Merge Dim Proyecto"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{216E9783-8244-4FD4-A5D7-3B1396747544}"
+          SQLTask:SqlStatementSource="MERGE [DWH_UFINET].[TRANSVENTA].[DimProyecto] AS TARGET &#xA; USING (&#xA;&#x9;SELECT &#xA;&#x9;&#x9;[Codp]&#xA;      ,[Tlf]&#xA;      ,[Fecha Adjudicado]&#xA;&#x9;  FROM  [PORTES].[Proyecto]&#xA;&#xA;       ) SOURCE&#xA;    ON TARGET.CodP  = SOURCE.Codp&#xA;&#x9;&#xA;  WHEN NOT MATCHED THEN&#xA;     INSERT (CodP,Tlf,[Fecha Adjudicado])&#xA;     VALUES (SOURCE.Codp,SOURCE.Tlf,SOURCE.[Fecha Adjudicado]);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\Merge Dim Proyecto"
+          TopLeft="186.874997215346,122.849997803271" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

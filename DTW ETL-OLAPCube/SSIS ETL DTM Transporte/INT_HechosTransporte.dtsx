@@ -1,0 +1,57 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/18/2022 9:19:08 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CT-DLUNA-MDG"
+  DTS:CreatorName="TELETICA\dluna-mdg"
+  DTS:DTSID="{F60B88F5-BEBF-46D6-8A7D-5DC983A736B1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.845.0"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="INT_HechosTransporte"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{0050631E-3BBD-4C9D-9421-E03DEDF5F8D2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Insertar Hechos"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{bb9bc371-e293-4482-a0ad-62f40a643bc6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar Hechos"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{216E9783-8244-4FD4-A5D7-3B1396747544}"
+          SQLTask:SqlStatementSource="ALTER SEQUENCE  id_hecho&#xA; RESTART  WITH 1 &#xA; MINVALUE 1 &#xA;&#xA;&#xA;SELECT&#x9;&#x9; NEXT VALUE FOR id_hecho AS idHecho&#xA;&#x9;&#x9; ,TR.CodP         AS  CodP    -- Código Proyecto&#xA;&#x9;&#x9;,TR.CodM        AS  CodM    -- Código Maquinaria&#xA;&#x9;&#x9;,CL.CodCliente  AS  CodCliente   -- Código Cliente&#xA;&#x9;&#x9;,TR.CodC        AS  CodC     -- Código Conductor&#xA;&#x9;&#x9;,PA.CodPais            AS  CodPais  -- Código Pais&#xA;&#x9;&#x9;,PROD.CodPR            AS  CodPR    -- Código Producto&#xA;&#x9;&#x9;,MA.Precio             AS  PrecioUSD  --- Precio Transporte &#xA;&#x9;&#x9;,PROY.[Fecha Adjudicado] AS Fecha_Adjudicado&#xA;&#x9;&#x9;,TR.[Fecha Inicio]     AS  Fecha_Hecho&#xA;&#xA;INTO #t1     -- Tabla temporal para el ingreso de nuevos registros dentro de la sentencia Merge&#xA;&#xA;FROM PORTES.Trabajo AS TR&#xA;INNER JOIN PORTES.Proyecto AS PROY&#xA;&#x9;&#x9;ON PROY.Codp  = TR.CodP&#xA;&#xA;&#x9;&#x9;INNER JOIN PORTES.Pais as PA&#xA;&#x9;&#x9;ON PA.NOMBRE = PROY.Pais&#xA;&#xA;&#x9;&#x9;INNER JOIN PORTES.Cliente as CL&#xA;&#x9;&#x9;ON CL.Cliente = PROY.Cliente&#xA;&#xA;&#x9;&#x9;INNER JOIN PORTES.Producto as PROD&#xA;&#x9;&#x9;ON PROD.Producto = PROY.[Desc]&#xA;&#xA;&#x9;&#x9;INNER JOIN PORTES.Maquinaria as MA&#xA;&#xA;&#x9;&#x9;ON MA.CodM  = TR.CodM&#xA;&#xA;MERGE [DWH_UFINET].[TRANSVENTA].[Hechos] AS TARGET &#xA; USING (&#xA; SELECT &#xA;&#x9;&#x9;*&#xA;&#xA;&#x9;&#x9;FROM&#x9;#t1&#xA;&#x9;&#x9;&#xA;&#xA;       ) SOURCE&#xA;    ON  TARGET.CodP  = SOURCE.CodP&#xA;&#x9;AND TARGET.CodM  = SOURCE.CodM&#xA;&#x9;AND TARGET.CodCL = SOURCE.CodCliente&#xA;&#x9;AND TARGET.CodC  = SOURCE.CodC&#xA;&#x9;AND TARGET.CodPais  = SOURCE.CodPais&#xA;&#x9;AND TARGET.CodPR  = SOURCE.CodPR&#xA; &#xA;  WHEN NOT MATCHED THEN&#xA;     INSERT (idHecho,CodP,CodM,CodCL,CodC,CodPais,CodPR,PrecioUSD,Fecha_Adjudicado,Fecha_Hecho)&#xA;     VALUES (SOURCE.idHecho,SOURCE.CodP,SOURCE.CodM,SOURCE.CodCliente,SOURCE.CodC,SOURCE.CodPais,SOURCE.CodPR,SOURCE.PrecioUSD,SOURCE.Fecha_Adjudicado,SOURCE.Fecha_Hecho);&#xA; &#xA; DROP TABLE #t1&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Insertar Hechos"
+          TopLeft="191.249998044223,94.449999383986" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
